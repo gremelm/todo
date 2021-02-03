@@ -6,7 +6,7 @@ api.use(express.static(__dirname + '/public'));
 api.use(bodyParser.json());
 
 api.listen(3000, () => {
-  console.log('API up and running!');
+  console.log('API up and running! Phase 4');
 });
 
 // api.get('/', (req, res) => {
@@ -18,3 +18,8 @@ api.post('/add', (req, res) => {
 	console.log(req.body);
 	res.send('It works!');
 });
+
+api.use((req, res, next) => {
+	console.log('Hello');
+	next();
+ });
